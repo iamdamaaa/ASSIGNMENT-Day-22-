@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch data</title>
+</head>
+<body>
+    
+<main class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 items-start">
+    <section class="w-full">
+        <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden group">
+            <img
+                id="main-product-image"
+                src="asset/mainImage/hitam1.webp"
+                alt="MW75 Headphone Front View"
+                class="w-full h-full object-cover"
+            >
+
+            <div class="flex justify-between items-center absolute inset-x-0 top-1/2 -translate-y-1/2 px-3">
+                <button
+                    id="previous"
+                    type="button"
+                    aria-label="Previous image"
+                    class="cursor-pointer p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition"
+                >
+                    <img src="asset/sliderIcon/chevron-compact-left.svg" alt="" class="w-6 h-6">
+                </button>
+
+                <button
+                    id="next"
+                    type="button"
+                    aria-label="Next image"
+                    class="cursor-pointer p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition"
+                >
+                    <img src="asset/sliderIcon/chevron-compact-right.svg" alt="" class="w-6 h-6">
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="flex flex-col gap-3 md:pt-2">
+        <h1 id="title" class="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight">
+            title
+        </h1>
+
+        <p id="harga" class="text-gray-500">
+            harga barang
+        </p>
+
+        <p id="rate" class="text-xl font-semibold">
+            rating barang
+        </p>
+    </section>
+</main>
+
+    <script>
+            const previousBtn = document.getElementById("previous")
+            const nextBtn = document.getElementById("next");
+
+            const titleEl = document.querySelector("#title");
+            const hargaEl = document.querySelector("#harga");
+            const rateEl = document.querySelector("#rate");
+            const imageEl = document.querySelector("#main-product-image")
+
+            let productList = [];
+            let currentIndex = 0;
+
+        function tampilkanProduk () {
+            if (productList.length === 0) return;
+            const produkAktif = productList[currentIndex];
+
+            titleEl.textContent = produkAktif.title;
+            hargaEl.textContent = produkAktif.price;
+            rateEl.textContent = produkAktif.rating;
+            imageEl.src = produkAktif.thumbnail;
+        }
+
+        async function getData(){
+            const url = 'https://dummyjson.com/products'
+            try {
+                const response = await fetch(url);
+                if (!response) {
+                    throw new Error ("terdapat kesalahan saat mengambil data")
+                }
+
+                const data = await response.json();
+                productList = data.products;
+                tampilkanProduk();
+            } catch (error) {
+                console.error(error.message);
+            }
+        };
+
+        getData();
+
+        previousBtn.addEventListener("click", function(){
+            if (currentIndex > 0) {
+                currentIndex--;
+                tampilkanProduk(currentIndex); 
+            } else {
+                currentIndex = productList.length - 1
+            };
+            tampilkanProduk(currentIndex);
+        });
+
+        nextBtn.addEventListener("click", function(){
+            if (currentIndex < productList.length - 1 ) {
+                currentIndex++;
+                tampilkanProduk;
+            } else {
+                currentIndex = 0;
+            }
+            tampilkanProduk(currentIndex);
+        })
+    </script>
+</body>
+</html>

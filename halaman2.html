@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman2</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="border-b border-gray-200 sticky top-0 bg-white z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center justify-between w-full lg:w-auto">
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button type="button" aria-label="Open Menu" class="p-2 cursor-pointer">
+                    <!-- Hamburger Icon -->
+                        <img src="asset/navIcons/list.svg" alt="" class="w-6 h-6">
+                    </button>
+                    <button type="button" aria-label="Search" class="p-2 cursor-pointer">
+                    <!-- Search Icon -->
+                        <img src="asset/navIcons/search.svg" alt="" class="w-6 h-6">
+                    </button>
+                </div>
+
+                <a href="#" class="font-bold tracking-widest text-lg sm:text-xl uppercase">
+                Master & Dynamic
+                </a>
+
+                <div class="flex items-center gap-2 lg:order-3 lg:hidden">
+                    <button type="button" aria-label="Account" class="p-2 cursor-pointer">
+                        <img src="asset/navIcons/person.svg" alt="" class="w-6 h-6">
+                    </button>
+                    <button type="button" aria-label="Cart" class="p-2 cursor-pointer">
+                        <img src="asset/navIcons/bag.svg" alt="" class="w-6 h-6">
+                    </button>
+                </div>            
+            </div>
+            <!-- Desktop -->
+             <div class="hidden lg:flex items-center gap-4">
+                <button type="button" aria-label="Open Menu" class="p-2 cursor-pointer">
+                    <img src="asset/navIcons/list.svg" alt="" class="w-6 h-6">
+                </button>
+                <button type="button" aria-label="Search" class="p-2 cursor-pointer">
+                    <img src="asset/navIcons/search.svg" alt="" class="w-6 h-6">
+                </button>
+                <button type="button" aria-label="Account" class="p-2 cursor-pointer">
+                    <img src="asset/navIcons/person.svg" alt="" class="w-6 h-6">
+                </button>
+                <button type="button" aria-label="Cart" class="p-2 cursor-pointer">
+                <img src="asset/navIcons/bag.svg" alt="" class="w-6 h-6">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN PRODUCT SECTION -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-12">
+        <!-- Layout Produk: Grid 1 Kolom (Mobile) -> Grid 2 Kolom (Desktop) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            
+            <!-- KOLOM KIRI: Galeri Gambar -->
+            <section aria-label="Galeri Produk" class="space-y-4">
+                <div class="relative aspect-square bg-gray-50 rounded-xl overflow-hidden group">
+                    <img id="main-product-image" src="asset/mainImage/hitam1.webp" alt="MW75 Headphone Front View" class="w-full h-full object-cover">
+                    
+                    <!-- Slider Navigasi Controls -->
+                    <div class="flex justify-between items-center absolute inset-x-0 top-1/2 -translate-y-1/2 px-3">
+                        <button id="previous" type="button" aria-label="Previous image" class="cursor-pointer p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition">
+                            <img src="asset/sliderIcon/chevron-compact-left.svg" alt="" class="w-6 h-6">
+                        </button>
+                        <button id="next" type="button" aria-label="Next image" class="cursor-pointer p-2 bg-white/80 rounded-full shadow-md hover:bg-white transition">
+                            <img src="asset/sliderIcon/chevron-compact-right.svg" alt="" class="w-6 h-6">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Thumbnail Navigation -->
+                <div id="thumbnail-list" class="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
+                    <button type="button" class="thumbnail cursor-pointer flex-shrink-0 rounded-lg overflow-hidden border-2 border-black aspect-square w-16 sm:w-20">
+                        <img src="asset/mainImage/hitam1.webp" alt="Thumbnail 1" class="w-full h-full object-cover">
+                    </button>
+                    <button type="button" class="thumbnail cursor-pointer flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-400 transition aspect-square w-16 sm:w-20">
+                        <img src="asset/mainImage/hitam2.webp" alt="Thumbnail 2" class="w-full h-full object-cover">
+                    </button>
+                    <button type="button" class="thumbnail cursor-pointer flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-400 transition aspect-square w-16 sm:w-20">
+                        <img src="asset/mainImage/hitam3.webp" alt="Thumbnail 3" class="w-full h-full object-cover">
+                    </button>
+                    <button type="button" class="thumbnail cursor-pointer flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-gray-400 transition aspect-square w-16 sm:w-20">
+                        <img src="asset/mainImage/hitam4.webp" alt="Thumbnail 4" class="w-full h-full object-cover">
+                    </button>
+                </div>
+            </section>
+
+            <!-- KOLOM KANAN: Detail & Purchase -->
+            <section aria-label="Informasi Pembelian" class="space-y-6">
+                <div>
+                    <h1 class="text-2xl sm:text-4xl font-bold tracking-tight">MW75 FOR TUMI</h1>
+                    <p class="text-gray-500 mt-1">Active Noise-Cancelling Wireless Headphones</p>
+                    <p class="text-xl font-semibold mt-3">Rp 9.500.000</p>
+                </div>
+
+                <!-- Varian Warna -->
+                <div class="space-y-2">
+                    <span class="text-sm font-medium text-gray-700">Warna: <strong class="text-black">Black Leather</strong></span>
+                    <div class="flex gap-2">  
+                        <button type="button" id="black-variant" class="  w-8 h-8 rounded-full bg-black border-2 border-black outline outline-2 outline-offset-2 outline-black" aria-label="Warna Hitam"></button>
+                        <button type="button" id="silver-variant" class="  w-8 h-8 rounded-full bg-gray-400 border-2 border-transparent" aria-label="Warna Abu-abu"></button>
+                    </div>
+                </div>
+
+                <!-- Add Button QTY -->     
+                <div class="space-y-3">
+                    <label for="quantity" class="block text-sm font-medium text-gray-700">Jumlah Barang</label>
+                    <div class="flex items-center gap-3">
+                    <button
+                        type="button"
+                        id="decrease-quantity"
+                        class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-gray-100">
+                        -
+                    </button>
+                    <input
+                        type="number"
+                        id="quantity"
+                        value="1"
+                        min="1"
+                        class="w-16 h-10 text-center border border-gray-300 rounded-lg"
+                    >
+
+                    <button
+                        type="button"
+                        id="increase-quantity"
+                        class="w-10 h-10 border border-gray-300 rounded-lg hover:bg-gray-100">
+                    +
+                    </button>
+                </div>
+                </div>
+
+            <!-- Product total -->
+            <div class="border-t border-gray-200 pt-4 space-y-2">
+
+
+                <!-- Action Button -->
+                <button type="button" class="w-full bg-black text-white py-4 px-6 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
+                    Tambah ke Keranjang
+                </button>
+
+                <div class="border border-gray-200 rounded-lg p-4 space-y-2">
+
+    <h3 class="font-semibold text-sm">Ringkasan Keranjang</h3>
+
+    <div class="flex justify-between text-sm">
+        <span class="text-gray-500">Jumlah Barang</span>
+        <span id="cart-item">0 Barang</span>
+    </div>
+
+    <div class="flex justify-between text-sm">
+        <span class="text-gray-500">Total Belanja</span>
+        <span id="cart-total" class="font-semibold">
+            Rp 0
+        </span>
+    </div>
+
+</div>
+
+                <!-- Key Features Grid -->
+                <div class="grid grid-cols-2 gap-4 pt-6 border-t border-gray-200">
+                    <div class="flex items-start gap-3">
+                        <img src="asset/iconFeature/1.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-medium">Adaptive ANC</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <img src="asset/iconFeature/2.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-medium">Lambskin Leather</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <img src="asset/iconFeature/3.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-medium">40mm Beryllium Drivers</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <img src="asset/iconFeature/4.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-medium">32 Hours Battery Life</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <img src="asset/iconFeature/5.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-medium">Bluetooth® 5.1</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <img src="asset/iconFeature/6.svg" alt="" class="w-6 h-6 flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-medium">4 Beamforming Mics</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- SECTION GUARANTEE / SHIPPING (Mobile: Horizontal Scroll Snap | Desktop: Grid 3 Kolom) -->
+    <section class="bg-gray-50 border-y border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex overflow-x-auto snap-x snap-mandatory gap-6 scrollbar-none md:grid md:grid-cols-3 md:gap-8 md:overflow-visible">
+                
+                <div class="flex-none w-[80vw] sm:w-[300px] md:w-auto snap-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-xs md:shadow-none">
+                    <h3 class="font-bold text-base mb-2">Free Shipping</h3>
+                    <p class="text-sm text-gray-600">Free ground shipping on orders of $99 or more in the U.S.</p>
+                </div>
+
+                <div class="flex-none w-[80vw] sm:w-[300px] md:w-auto snap-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-xs md:shadow-none">
+                    <h3 class="font-bold text-base mb-2">Free Returns</h3>
+                    <p class="text-sm text-gray-600">We offer a 14-day return policy, allowing you to shop with confidence.</p>
+                </div>
+
+                <div class="flex-none w-[80vw] sm:w-[300px] md:w-auto snap-center bg-white md:bg-transparent p-6 md:p-0 rounded-xl shadow-xs md:shadow-none">
+                    <h3 class="font-bold text-base mb-2">Product Protection</h3>
+                    <p class="text-sm text-gray-600">Rest easy with our manufacturer warranty, ensuring that your product is protected.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION ARTICLES / STORY (Mobile: Vertikal Stack | Desktop: Gambar & Teks Berdampingan) -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+        
+        <article class="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="asset/article/artikel1.webp" alt="Master & Dynamic for TUMI" class="w-full h-auto rounded-2xl object-cover aspect-4/3">
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Collaboration</span>
+                <h2 class="text-2xl sm:text-3xl font-bold">Master & Dynamic for TUMI</h2>
+                <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                    A collection of active noise-cancelling sound tools created in partnership with the international travel and lifestyle brand built to enhance any journey. Featuring TUMI’s iconic 19 Degree design details, the headphones and earphones are a seamless blend of engineering precision and artistic expression.
+                </p>
+            </div>
+        </article>
+
+        <article class="flex flex-col md:flex-row-reverse items-center gap-8 lg:gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="asset/article/artikel2.webp" alt="MW75 Details" class="w-full h-auto rounded-2xl object-cover aspect-4/3">
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Engineering</span>
+                <h2 class="text-2xl sm:text-3xl font-bold">MW75 Active Noise-Cancelling</h2>
+                <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                    The MW75 Active Noise-Cancelling Wireless Headphones deliver detailed, serious acoustics and custom-tailored sound with 40mm Beryllium drivers and Adaptive Active Noise Cancellation for the perfect combination of sound and silence. Experience effortless all-day listening with lightweight anodized aluminum and soft lambskin leather.
+                </p>
+            </div>
+        </article>
+    </section>
+        
+    <section class="w-full bg-white px-5 py-10 text-gray-900 md:px-10 lg:px-16">
+
+    <div class="flex flex-col gap-8 lg:flex-row lg:gap-12">
+
+        <!-- LEFT CONTENT : 1/4 -->
+        <div class="w-full lg:w-1/4 lg:shrink-0">
+            <div class="lg:sticky lg:top-10">
+                <h2 class="text-2xl font-semibold tracking-tight md:text-3xl">
+                    Product Specifications
+                </h2>
+
+                <p class="mt-3 text-sm leading-6 text-gray-500">
+                    Explore the detailed specifications, materials,
+                    sound features, and connectivity of this product.
+                </p>
+            </div>
+        </div>
+
+        <!-- RIGHT CONTENT : 3/4 -->
+        <div class="w-full lg:w-3/4">
+
+            <ul class="divide-y divide-gray-200 border-t border-gray-200">
+
+                <!-- MATERIALS AND DESIGN -->
+                <li class="accordion-item">
+
+                    <button
+                        type="button"
+                        class="accordion-trigger flex w-full items-center justify-between gap-4 py-6 text-left"
+                        aria-expanded="false">
+
+                        <h3 class="text-lg font-semibold md:text-xl">
+                            Materials and Design
+                        </h3>
+
+                        <svg
+                            class="accordion-arrow h-5 w-5 shrink-0 text-gray-500 transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+
+                    <div class="accordion-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+                        <div class="accordion-inner overflow-hidden">
+
+                            <div class="overflow-x-auto pb-6">
+                                <table class="w-full text-left text-sm">
+                                    <tbody class="divide-y divide-gray-100">
+
+                                        <tr>
+                                            <th class="w-1/3 py-4 pr-4 font-medium text-gray-900">
+                                                Materials
+                                            </th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                Lambskin leather headband and ear pads /
+                                                Anodized aluminum controls
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Dimensions</th>
+                                            <td class="py-4 text-gray-500">160.75mm x 197.83mm x 83.57mm</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Weight</th>
+                                            <td class="py-4 text-gray-500">338g</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Ear Coupling</th>
+                                            <td class="py-4 text-gray-500">Over-Ear</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Ear Pads</th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                Replaceable magnetic lambskin-wrapped memory foam
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- SOUND AND FEATURES -->
+                <li class="accordion-item">
+
+                    <button
+                        type="button"
+                        class="accordion-trigger flex w-full items-center justify-between gap-4 py-6 text-left"
+                        aria-expanded="false">
+
+                        <h3 class="text-lg font-semibold md:text-xl">
+                            Sound and Features
+                        </h3>
+
+                        <svg
+                            class="accordion-arrow h-5 w-5 shrink-0 text-gray-500 transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+
+                    <div class="accordion-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+                        <div class="accordion-inner overflow-hidden">
+
+                            <div class="overflow-x-auto pb-6">
+                                <table class="w-full text-left text-sm">
+                                    <tbody class="divide-y divide-gray-100">
+
+                                        <tr>
+                                            <th class="w-1/3 py-4 pr-4 font-medium text-gray-900">Drivers</th>
+                                            <td class="py-4 text-gray-500">40mm beryllium</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Impedance</th>
+                                            <td class="py-4 text-gray-500">32 Ohms</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Talk Microphones</th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                4 Microphone talk solution with wind protection
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">ANC Microphones</th>
+                                            <td class="py-4 text-gray-500">4 Microphone ANC solution</td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Voice Assistant</th>
+                                            <td class="py-4 text-gray-500">
+                                                Compatible with native voice assistants
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- CONNECTIVITY AND CHARGING -->
+                <li class="accordion-item">
+
+                    <button
+                        type="button"
+                        class="accordion-trigger flex w-full items-center justify-between gap-4 py-6 text-left"
+                        aria-expanded="false">
+
+                        <h3 class="text-lg font-semibold md:text-xl">
+                            Connectivity and Charging
+                        </h3>
+
+                        <svg
+                            class="accordion-arrow h-5 w-5 shrink-0 text-gray-500 transition-transform duration-300"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+
+                    <div class="accordion-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+                        <div class="accordion-inner overflow-hidden">
+
+                            <div class="overflow-x-auto pb-6">
+                                <table class="w-full text-left text-sm">
+                                    <tbody class="divide-y divide-gray-100">
+
+                                        <tr>
+                                            <th class="w-1/3 py-4 pr-4 font-medium text-gray-900">Battery Life</th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                Up to 32 hours of battery life or up to 28 hours with ANC enabled
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Bluetooth Profile</th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                Bluetooth® 5.1 range of 100ft/30m with AAC,
+                                                aptX™ Adaptive up to 24 bit/48kHz, and SBC.
+                                                Hi-res requires a compatible source device and streaming service
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">
+                                                Wired Digital Headphone Connection
+                                            </th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                Supports hi-res audio up to 24-bit / 96kHz using provided
+                                                USB-C to USB-C cable with supported devices
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">
+                                                Analog Headphone Connection
+                                            </th>
+                                            <td class="py-4 leading-6 text-gray-500">
+                                                USB-C to 3.5mm cable for optional analog audio connection
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Cables</th>
+                                            <td class="py-4 text-gray-500">
+                                                USB-C to 3.5mm audio cable, USB-C to USB-C charging cable
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th class="py-4 pr-4 font-medium text-gray-900">Antenna</th>
+                                            <td class="py-4 text-gray-500">Internal Antenna</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+    <script>
+const mainImage = document.querySelector("#main-product-image");
+const thumbnailList = document.querySelector("#thumbnail-list");
+
+const blackVariant = document.querySelector("#black-variant");
+const silverVariant = document.querySelector("#silver-variant");
+
+const previousButton = document.querySelector("#previous");
+const nextButton = document.querySelector("#next");
+
+// Data gambar 
+const productImages = {
+    black: [
+        "asset/mainImage/hitam1.webp",
+        "asset/mainImage/hitam2.webp",
+        "asset/mainImage/hitam3.webp",
+        "asset/mainImage/hitam4.webp"
+    ],
+
+    silver: [
+        "asset/mainImage/silver1.webp",
+        "asset/mainImage/silver2.webp",
+        "asset/mainImage/silver3.webp",
+        "asset/mainImage/silver4.webp"
+    ]
+};
+
+// state
+let currentIndex = 0;
+let activeImage = productImages.black;
+
+// Fungsi mengganti galeri
+function changeGallery(images) {
+
+    activeImage = images;
+    currentIndex = 0;
+
+    // Ganti gambar utama
+    mainImage.src = activeImage[currentIndex];
+
+    // Ambil seluruh thumbnail
+    const thumbnails = thumbnailList.querySelectorAll(".thumbnail");
+
+    // Ganti sumber gambar setiap thumbnail
+    thumbnails.forEach((thumbnail, index) => {
+        thumbnail.querySelector("img").src = images[index];
+    });
+
+    //Reset thumbnail
+    updateThumbnailStyle(0);
+}
+
+function updateThumbnailStyle(activeIndex) {
+    const thumbnails = thumbnailList.querySelectorAll(".thumbnail");
+
+    thumbnails.forEach((thumbnail, index) => {
+        if (index === activeIndex) {
+            thumbnail.classList.add("border-black");
+            thumbnail.classList.remove("border-transparent");
+        } else {
+            thumbnail.classList.remove("border-black");
+            thumbnail.classList.add("border-transparent")
+        }
+    });
+}
+
+function updateVariant(activeButton, inactiveButton) {
+    activeButton.classList.add("border-black", "outline", "outline-2", "outline-offset-2");
+    activeButton.classList.remove("border-transparent");
+
+    inactiveButton.classList.remove("border-black", "outline", "outline-2", "outline-offset-2");
+    inactiveButton.classList.add("border-transparent");
+}
+
+// Event pilihan warna
+blackVariant.addEventListener("click", () => {
+    changeGallery(productImages.black);
+    updateVariant(blackVariant, silverVariant)
+});
+
+silverVariant.addEventListener("click", () => {
+    changeGallery(productImages.silver);
+    updateVariant(silverVariant, blackVariant)
+});
+
+// Event pilihan thumbnail
+thumbnailList.addEventListener("click", (event) => {
+    const thumbnail = event.target.closest(".thumbnail");
+
+    if (!thumbnail) return;
+
+    const thumbnails = [...thumbnailList.querySelectorAll(".thumbnail")];
+
+    currentIndex = thumbnails.indexOf(thumbnail);
+
+    if (currentIndex === -1) return;
+
+    mainImage.src = activeImage[currentIndex];
+
+    updateThumbnailStyle(currentIndex);
+});    
+
+// Previous & Next
+previousButton.addEventListener("click", () => {
+    if (currentIndex === 0) {
+        currentIndex = 3;
+    } else currentIndex--;
+    mainImage.src = activeImage[currentIndex];
+    updateThumbnailStyle(currentIndex);
+})
+
+nextButton.addEventListener("click", () => {
+    if (currentIndex === activeImage.length - 1) {
+        currentIndex = 0;
+    } else currentIndex++;
+    mainImage.src = activeImage[currentIndex];
+    updateThumbnailStyle(currentIndex);
+})
+
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach((item) => {
+
+        const trigger = item.querySelector('.accordion-trigger');
+        const content = item.querySelector('.accordion-content');
+        const arrow = item.querySelector('.accordion-arrow');
+
+        trigger.addEventListener('click', () => {
+
+            const isOpen = content.classList.contains('grid-rows-[1fr]');
+
+            // Tutup seluruh accordion
+            accordionItems.forEach((otherItem) => {
+
+                const otherContent = otherItem.querySelector('.accordion-content');
+                const otherTrigger = otherItem.querySelector('.accordion-trigger');
+                const otherArrow = otherItem.querySelector('.accordion-arrow');
+
+                otherContent.classList.remove('grid-rows-[1fr]');
+                otherContent.classList.add('grid-rows-[0fr]');
+
+                otherTrigger.setAttribute('aria-expanded', 'false');
+                otherArrow.classList.remove('rotate-180');
+
+            });
+
+            // Buka accordion yang dipilih
+            if (!isOpen) {
+
+                content.classList.remove('grid-rows-[0fr]');
+                content.classList.add('grid-rows-[1fr]');
+
+                trigger.setAttribute('aria-expanded', 'true');
+                arrow.classList.add('rotate-180');
+
+            }
+
+        });
+
+    });
+
+
+// product and calculate
+
+const productPrice = 9500000;
+
+const quantityInput = document.querySelector("#quantity");
+const decreaseButton = document.querySelector("#decrease-quantity");
+const increaseButton = document.querySelector("#increase-quantity");
+
+const totalItem = document.querySelector("#total-item");
+const totalPrice = document.querySelector("#total-price");
+
+const cartItem = document.querySelector("#cart-item");
+const cartTotal = document.querySelector("#cart-total");
+
+let totalCartItem = 0;
+let totalCartPrice = 0;
+
+function formatRupiah(number) {
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    }).format(number);
+}
+function updateProductTotal() {
+
+    let quantity = Number(quantityInput.value);
+
+    if (!Number.isInteger(quantity) || quantity < 1) {
+        quantity = 1;
+        quantityInput.value = 1;
+    }
+
+    const subtotal = quantity * productPrice;
+
+    totalItem.textContent = `${quantity} Barang`;
+    totalPrice.textContent = formatRupiah(subtotal);
+}
+
+decreaseButton.addEventListener("click", () => {
+
+    let quantity = Number(quantityInput.value);
+
+    if (quantity > 1) {
+        quantity--;
+    }
+
+    quantityInput.value = quantity;
+
+    updateProductTotal();
+});
+
+increaseButton.addEventListener("click", () => {
+
+    let quantity = Number(quantityInput.value);
+
+    quantity++;
+
+    quantityInput.value = quantity;
+
+    updateProductTotal();
+});
+
+quantityInput.addEventListener("input", () => {
+    updateProductTotal();
+});
+
+const addToCartButton = document.querySelector(
+    'button.bg-black.text-white'
+);
+
+addToCartButton.addEventListener("click", () => {
+
+    const quantity = Number(quantityInput.value);
+
+    totalCartItem += quantity;
+
+    totalCartPrice += quantity * productPrice;
+
+    cartItem.textContent = `${totalCartItem} Barang`;
+
+    cartTotal.textContent = formatRupiah(totalCartPrice);
+
+});
+
+updateProductTotal();
+ </script>
+</body>
+</html>
